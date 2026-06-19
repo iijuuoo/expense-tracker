@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WalletFlow - Presentation Slide Deck</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #0b0f19;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0b0f19 80%);
+      --primary: #6366f1;
+      --accent: #a855f7;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --panel: rgba(17, 24, 39, 0.7);
+      --panel-border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      background-image: var(--bg-gradient);
+      color: var(--text);
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Presentation Container */
+    .deck-container {
+      width: 90vw;
+      height: 80vh;
+      max-width: 1100px;
+      position: relative;
+    }
+
+    /* Individual Slides */
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      padding: 50px;
+      opacity: 0;
+      transform: scale(0.96) translateY(20px);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+      z-index: 10;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--panel-border);
+      padding-bottom: 12px;
+    }
+
+    p {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Content Layouts */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin: 20px 0;
+    }
+
+    .slide-text {
+      flex: 1;
+    }
+
+    .slide-visual {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 24px;
+      font-family: monospace;
+      font-size: 14px;
+      color: #6ee7b7;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    li {
+      font-size: 18px;
+      position: relative;
+      padding-left: 28px;
+      color: var(--text-muted);
+    }
+
+    li strong {
+      color: white;
+    }
+
+    li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Footer & Navigation */
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 15px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--panel-border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+    }
+
+    .badge {
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .highlight-card {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px dashed rgba(99, 102, 241, 0.3);
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 15px;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="deck-container">
+    
+    <!-- Slide 1: Cover -->
+    <div class="slide active">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <span class="badge" style="font-size: 14px;">MERN Stack Presentation</span>
+        <h1 style="font-size: 54px; margin-bottom: 15px;">Wallet<span class="gradient-text">Flow</span></h1>
+        <p style="font-size: 22px; max-width: 650px;">A Premium Personal Finance Tracker & Real-Time Spending Analytics Dashboard</p>
+        
+        <div style="margin-top: 40px; font-size: 14px; color: var(--text-muted)">
+          Press <strong>Left/Right Arrows</strong> or <strong>Spacebar</strong> to navigate
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>WalletFlow Slide Deck</span>
+        <span>Slide 1 of 8</span>
+      </div>
+    </div>
+
+    <!-- Slide 2: Project Goals -->
+    <div class="slide">
+      <h2>Project Overview & Goals</h2>
+      <div class="slide-body">
+        <div class="slide-text">
+          <ul>
+            <li><strong>Intuitive Income/Expense CRUD:</strong> Record daily financials with custom categories, dates, and annotations.</li>
+            <li><strong>Secured Ledger:</strong> Safely register user authentication profiles mapping credentials to transactions.</li>
+            <li><strong>Spend Distribution Analytics:</strong> Represent expense trends using category breakdowns and historical comparisons.</li>
+            <li><strong>Ultra Responsive Design:</strong> Render complex financial dashboards on mobile, tablet, and desktop views alike.</li>
+          </ul>
+        </div>
+        <div class="slide-text">
+          <div class="highlight-card" style="margin-top:0;">
+            <strong style="color:var(--primary)">Core Objectives:</strong>
+            <p style="font-size: 15px; margin-top: 8px; color: #cbd5e1;">To create a high-fidelity MERN application demonstrating production-level CRUD endpoints, JWT security, custom SVG drawing methods, and offline database fallback mechanics.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>WalletFlow Slide Deck</span>
+        <span>Slide 2 of 8</span>
+      </div>
+    </div>
+
+    <!-- Slide 3: The Architecture -->
+    <div class="slide">
+      <h2>Folder Structure</h2>
+      <div class="slide-body">
+        <div class="slide-text">
+          <ul>
+            <li><strong>Client Folder (Frontend):</strong> Configured with Vite, React, React Router, and standard Context components.</li>
+            <li><strong>Server Folder (Backend):</strong> Powered by Express, modularized routers, models, and custom controller layers.</li>
+            <li><strong>Separation of Concerns:</strong> Separate endpoints for `/auth`, `/transactions`, and `/summary`.</li>
+            <li><strong>Tailwind-Free Styling:</strong> Structured with modern CSS variables, class bindings, and scroll behaviors.</li>
+          </ul>
+        </div>
+        <div class="slide-visual">
+expense-tracker/
+├── client/
+│   ├── src/
+│   │   ├── components/ (Navbar, PieChart, BarChart)
+│   │   ├── context/ (AuthContext.jsx)
+│   │   ├── pages/ (Login, Register, Dashboard, Ledger)
+│   │   └── index.css (Premium Stylesheet)
+└── server/
+    ├── config/ (db.js connection coordinator)
+    ├── middleware/ (authMiddleware JWT verifier)
+    ├── models/ (User.js, Transaction.js, dbStore.js)
+    └── routes/ (authRoutes, transactionRoutes)</div>
+      </div>
+      <div class="slide-footer">
+        <span>WalletFlow Slide Deck</span>
+        <span>Slide 3 of 8</span>
+      </div>
+    </div>
+
+    <!-- Slide 4: Database Innovation -->
+    <div class="slide">
+      <h2>Dual-Mode Database Connection</h2>
+      <div class="slide-body">
+        <div class="slide-text">
+          <ul>
+            <li><strong>Dynamic Failover Protection:</strong> Attempts Mongoose MongoDB connection. If absent, shifts to JSON mode automatically.</li>
+            <li><strong>Mongoose APIs:</strong> Normal Mongoose schemas mapping users and transaction records when connected to MongoDB.</li>
+            <li><strong>Local Store Fallback:</strong> Creates a localized JSON store (`dbStore.js`) managing files under `server/data/store.json`.</li>
+            <li><strong>Unified Interface:</strong> Models export methods wrapping queries. Controllers call the same API in both modes!</li>
+          </ul>
+        </div>
+        <div class="slide-visual" style="color: #60a5fa;">
+// dbStore.js helper mimics MongoDB:
+find: async (collection, query = {}) => {
+  const store = readStore();
+  const list = store[collection] || [];
+  return list.filter(item => matchRecord(item, query));
+}
+// Automatically parses operators:
+// $regex, $or, $gte, $lte, $gt, $lt</div>
+      </div>
+      <div class="slide-footer">
+        <span>WalletFlow Slide Deck</span>
+        <span>Slide 4 of 8</span>
+      </div>
+    </div>
+
+    <!-- Slide 5: Backend & Security -->
+    <div class="slide">
+      <h2>Backend Endpoints & Security</h2>
+      <div class="slide-body">
+        <div class="slide-text">
+          <ul>
+            <li><strong>Authentication Endpoints:</strong> Registry (`POST /register`), session sign-in (`POST /login`), profile load (`GET /profile`).</li>
+            <li><strong>Transaction Controllers:</strong> CRUD paths (`GET /`, `POST /`, `PUT /:id`, `DELETE /:id`) checking ownership.</li>
+            <li><strong>Password Protection:</strong> Uses `bcryptjs` hashing in both local offline and MongoDB database modes.</li>
+            <li><strong>JWT Authorization Headers:</strong> Validates `Bearer <token>` in header middleware mapping users to requests.</li>
+          </ul>
+        </div>
+        <div class="slide-text">
+          <div class="highlight-card" style="margin-top: 0;">
+            <strong style="color:var(--accent)">Protected Endpoints:</strong>
+            <p style="font-size:14px; margin-top: 8px;">GET /api/transactions<br>POST /api/transactions<br>PUT /api/transactions/:id<br>DELETE /api/transactions/:id<br>GET /api/summary/overview<br>GET /api/summary/monthly<br>GET /api/summary/category</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>WalletFlow Slide Deck</span>
+        <span>Slide 5 of 8</span>
+      </div>
+    </div>
+
+    <!-- Slide 6: Premium UI Elements -->
+    <div class="slide">
+      <h2>Premium Design & Aesthetics</h2>
+      <div class="slide-body">
+        <div class="slide-text">
+          <ul>
+            <li><strong>Harmonious Colors:</strong> Premium indigo, violet, deep emerald, and soft coral accents over dark background.</li>
+            <li><strong>Glassmorphic Cards:</strong> Card layouts with translucency, borders, and backdrop blur variables.</li>
+            <li><strong>Floating Micro-Animations:</strong> CSS transitions applied to buttons, input focus states, and cards.</li>
+            <li><strong>Ledger Utilities:</strong> Search query matching title/description and type/category filters.</li>
+          </ul>
+        </div>
+        <div class="slide-text">
+          <div class="highlight-card" style="margin-top:0;">
+            <strong style="color: var(--primary);">Interactive SVG Charts:</strong>
+            <p style="font-size:14px; margin-top: 8px; color: #cbd5e1;">- Circular SVG circumference values used to animate donut chart wedges dynamically.<br>- Responsive side-by-side rect paths rendered for the income vs expense comparisons.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>WalletFlow Slide Deck</span>
+        <span>Slide 6 of 8</span>
+      </div>
+    </div>
+
+    <!-- Slide 7: Live Demo Walkthrough -->
+    <div class="slide">
+      <h2>Live Demo Workflow</h2>
+      <div class="slide-body">
+        <div class="slide-text">
+          <ul>
+            <li><strong>1. Register:</strong> Onboard user 'John Doe', establishing JWT authorization state.</li>
+            <li><strong>2. Add Income:</strong> Add Salary ₹50,000. Point out real-time calculations in card counters.</li>
+            <li><strong>3. Record Expenses:</strong> Add Food (₹8,000), Travel (₹5,000), and Shopping (₹7,000). Show donut charts updating.</li>
+            <li><strong>4. Modify Transaction:</strong> Use the ledger table to click edit, change details inside the overlay modal.</li>
+            <li><strong>5. View Summary:</strong> Verify charts and total balance values recalculate instantly on save.</li>
+          </ul>
+        </div>
+        <div class="slide-text">
+          <div class="highlight-card" style="margin-top:0; border-color: var(--success);">
+            <strong style="color: var(--success)">Demo Status:</strong>
+            <p style="font-size: 14px; margin-top: 6px; color:#cbd5e1;">Frontend Dev server is running on port 5173.<br>Backend server is active on port 5000.<br>JSON database is initialized and tracking test records.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>WalletFlow Slide Deck</span>
+        <span>Slide 7 of 8</span>
+      </div>
+    </div>
+
+    <!-- Slide 8: Q&A / Conclusion -->
+    <div class="slide">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <span class="badge">Thank You</span>
+        <h1 style="font-size: 48px; margin-bottom: 20px;">Questions & Answers</h1>
+        <p style="font-size: 20px; max-width: 600px; color: var(--text-muted)">We are happy to answer any questions about the architecture, database fallbacks, or frontend rendering methods.</p>
+        
+        <div style="margin-top: 40px; display: flex; gap: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--panel-border); padding: 12px 24px; border-radius: 8px;">
+            <strong>Presenter:</strong> John Doe
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--panel-border); padding: 12px 24px; border-radius: 8px;">
+            <strong>Project:</strong> WalletFlow MERN
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>WalletFlow Slide Deck</span>
+        <span>Slide 8 of 8</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      // Update slide indicator inside slide footer
+      slides.forEach((slide, i) => {
+        const indicator = slide.querySelector('.slide-footer span:last-child');
+        if (indicator) {
+          indicator.textContent = `Slide ${i + 1} of ${slides.length}`;
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    // Mouse click navigation (excluding interactive components)
+    document.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A') {
+        nextSlide();
+      }
+    });
+
+    // Add navigation buttons to slide footers
+    slides.forEach((slide, i) => {
+      const footer = slide.querySelector('.slide-footer');
+      if (footer) {
+        const navContainer = document.createElement('div');
+        navContainer.className = 'nav-buttons';
+        
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'nav-btn';
+        prevBtn.textContent = '◀ Prev';
+        prevBtn.onclick = (e) => {
+          e.stopPropagation();
+          prevSlide();
+        };
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'nav-btn';
+        nextBtn.textContent = i === slides.length - 1 ? 'Start Over ↺' : 'Next ▶';
+        nextBtn.onclick = (e) => {
+          e.stopPropagation();
+          nextSlide();
+        };
+
+        navContainer.appendChild(prevBtn);
+        navContainer.appendChild(nextBtn);
+        footer.appendChild(navContainer);
+      }
+    });
+  </script>
+</body>
+</html>

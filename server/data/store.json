@@ -1,0 +1,149 @@
+{
+  "users": [
+    {
+      "_id": "mqhzlg9czhzzjxkp9",
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "$2a$10$UtyEAOieIAJFAmeemlYghOyh1FGBEvKMwz.TiSl6FE78DancAbmz2",
+      "createdAt": "2026-06-17T11:27:43.248Z"
+    },
+    {
+      "_id": "mqi016fyk1tf5by6o",
+      "name": "test2",
+      "email": "test2@gmail.com",
+      "password": "$2a$10$P3TtYPVUwfNJF5ES3luklulHyClv/iGb8PIk/r84w2jBwkUJVe7Oi",
+      "createdAt": "2026-06-17T11:39:57.022Z"
+    },
+    {
+      "_id": "mqj9q2g3eam8pkkh2",
+      "name": "Abuoo",
+      "email": "abu2020@gmail.com",
+      "password": "$2a$10$ELzuYP/4Ey1O6bQpOF/LDeYh7qTOiS1PYiVP5jNZthG.k84IjB/2G",
+      "createdAt": "2026-06-18T08:59:00.963Z"
+    }
+  ],
+  "transactions": [
+    {
+      "_id": "mqhzm0scwyyawf9bd",
+      "userId": "mqhzlg9czhzzjxkp9",
+      "title": "food",
+      "amount": 1000,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-17T00:00:00.000Z",
+      "description": "qwertyuio",
+      "createdAt": "2026-06-17T11:28:09.852Z",
+      "updatedAt": "2026-06-17T11:28:29.146Z"
+    },
+    {
+      "_id": "mqhzmx65abxjr3ezz",
+      "userId": "mqhzlg9czhzzjxkp9",
+      "title": "salary",
+      "amount": 10000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-17T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-17T11:28:51.821Z"
+    },
+    {
+      "_id": "mqj9rgjjlop077ghl",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "dress shoping",
+      "amount": 5000,
+      "type": "expense",
+      "category": "Shopping",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T09:00:05.887Z"
+    },
+    {
+      "_id": "mqj9sdomv8ntdvr83",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "salary",
+      "amount": 50000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T09:00:48.838Z"
+    },
+    {
+      "_id": "mqj9sy88h7l1lv0rl",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "grocery",
+      "amount": 2500,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T09:01:15.464Z"
+    },
+    {
+      "_id": "mqj9tnvlfd67f90k8",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "bill",
+      "amount": 3000,
+      "type": "expense",
+      "category": "Bills",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T09:01:48.705Z"
+    },
+    {
+      "_id": "mqj9ua85yxx2gjy5a",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "food",
+      "amount": 10000,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T09:02:17.669Z"
+    },
+    {
+      "_id": "mqjceip2g2etss1y3",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "medicine",
+      "amount": 1500,
+      "type": "expense",
+      "category": "Health",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T10:14:00.998Z"
+    },
+    {
+      "_id": "mqjcfud1an72nmc0h",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "travel",
+      "amount": 1500,
+      "type": "expense",
+      "category": "Travel",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T10:15:02.773Z"
+    },
+    {
+      "_id": "mqjch0uqq9xgvbs2i",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "movie",
+      "amount": 2000,
+      "type": "expense",
+      "category": "Entertainment",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T10:15:57.842Z"
+    },
+    {
+      "_id": "mqjde49iim20jho3l",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "starbucks ",
+      "amount": 750,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-18T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-18T10:41:41.910Z"
+    }
+  ]
+}
