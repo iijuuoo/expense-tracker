@@ -4,8 +4,8 @@ import { ChevronDown } from 'lucide-react';
 // Color map tailored to match the mockup
 const CATEGORY_COLORS = {
   Food: '#f43f5e',         // Red/Pink (25% Food)
-  Travel: '#38bdf8',       // Light Blue (32% House/Travel equivalent)
-  Shopping: '#3b82f6',     // Royal Blue (16% Online Shop)
+  Travel: '#14b8a6',       // Teal
+  Shopping: '#6366f1',     // Indigo
   Bills: '#fb923c',        // Orange (10% Beauty/Bills equivalent)
   Entertainment: '#a855f7', // Purple (17% Investing equivalent)
   Health: '#10b981',       // Green
@@ -14,7 +14,7 @@ const CATEGORY_COLORS = {
 
 const getCategoryColor = (category, index) => {
   if (CATEGORY_COLORS[category]) return CATEGORY_COLORS[category];
-  const colors = ['#a855f7', '#60a5fa', '#34d399', '#f87171', '#fb7185'];
+  const colors = ['#a855f7', '#818cf8', '#34d399', '#f87171', '#fb7185'];
   return colors[index % colors.length];
 };
 
@@ -39,7 +39,7 @@ const PieChart = ({ data = [] }) => {
   const strokeWidth = 14;
   const circumference = 2 * Math.PI * radius; // ~345.57
   
-  let accumulatedPercentage = 0;
+  let accumulatedLength = 0;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -100,10 +100,10 @@ const PieChart = ({ data = [] }) => {
             {chartData.map((item, index) => {
               const percentage = (item.amount / total) * 100;
               const strokeLength = (percentage / 100) * circumference;
-              // Adjust offset so they sit end-to-end
-              const strokeOffset = circumference - strokeLength + (accumulatedPercentage / 100) * circumference;
+              // Shift the starting point of the stroke clockwise by accumulatedLength using a negative offset
+              const strokeOffset = -accumulatedLength;
               
-              accumulatedPercentage -= percentage;
+              accumulatedLength += strokeLength;
 
               const isHovered = hoveredIndex === index;
               const color = getCategoryColor(item.category, index);
@@ -117,7 +117,7 @@ const PieChart = ({ data = [] }) => {
                   fill="transparent"
                   stroke={color}
                   strokeWidth={isHovered ? strokeWidth + 2 : strokeWidth}
-                  strokeDasharray={circumference}
+                  strokeDasharray={`${strokeLength} ${circumference}`}
                   strokeDashoffset={strokeOffset}
                   strokeLinecap="round"
                   onMouseEnter={() => setHoveredIndex(index)}

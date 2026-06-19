@@ -230,7 +230,7 @@ const Dashboard = () => {
           </div>
           <div>
             <div className="stat-card-value">
-              ${overview.balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              ₹{overview.balance.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
             <div className="stat-card-badge">
               <span>+22% ↗</span>
@@ -249,7 +249,7 @@ const Dashboard = () => {
           </div>
           <div>
             <div className="stat-card-value">
-              ${overview.totalIncome.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              ₹{overview.totalIncome.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
             <div className="stat-card-badge">
               <span>+36% ↗</span>
@@ -268,7 +268,7 @@ const Dashboard = () => {
           </div>
           <div>
             <div className="stat-card-value">
-              ${overview.totalExpense.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              ₹{overview.totalExpense.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
             <div className="stat-card-badge">
               <span>-11% ↘</span>
@@ -287,7 +287,7 @@ const Dashboard = () => {
           </div>
           <div>
             <div className="stat-card-value">
-              ${savingsVal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              ₹{savingsVal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
             <div className="stat-card-badge">
               <span>+15% ↗</span>
@@ -441,7 +441,7 @@ const Dashboard = () => {
                         color: t.type === 'income' ? 'var(--success)' : '#111827',
                         textAlign: 'right'
                       }}>
-                        {t.type === 'income' ? '+' : '-'}${t.amount.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                        {t.type === 'income' ? '+' : '-'}₹{t.amount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                       </td>
                       <td>
                         <div style={{ display: 'flex', gap: '6px', justifyContent: 'flex-end' }}>
@@ -562,7 +562,7 @@ const Dashboard = () => {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div className="form-group">
-                  <label className="form-label">Amount ($)</label>
+                  <label className="form-label">Amount (₹)</label>
                   <input
                     type="number"
                     placeholder="e.g. 6.50"

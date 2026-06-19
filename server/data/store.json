@@ -144,6 +144,28 @@
       "date": "2026-06-18T00:00:00.000Z",
       "description": "",
       "createdAt": "2026-06-18T10:41:41.910Z"
+    },
+    {
+      "_id": "mqks2k21k5xls0lsu",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "salary",
+      "amount": 60000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-05-19T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-19T10:20:22.921Z"
+    },
+    {
+      "_id": "mqks395ww18b1rv3v",
+      "userId": "mqj9q2g3eam8pkkh2",
+      "title": "tea",
+      "amount": 2000,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-05-19T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-19T10:20:55.460Z"
     }
   ]
 }

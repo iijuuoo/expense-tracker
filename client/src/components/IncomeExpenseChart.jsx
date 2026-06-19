@@ -73,7 +73,7 @@ const IncomeExpenseChart = ({ data = [] }) => {
     return { value: val, y };
   });
 
-  const activeColor = viewType === 'income' ? '#3b82f6' : '#f43f5e';
+  const activeColor = viewType === 'income' ? '#6366f1' : '#f43f5e';
   const activeGradientId = `chart-gradient-${viewType}`;
 
   return (

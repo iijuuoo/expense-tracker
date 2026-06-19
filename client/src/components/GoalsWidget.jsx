@@ -88,7 +88,7 @@ const GoalsWidget = () => {
             key={idx}
             className={`goals-progress-segment${idx < activeSegmentsCount ? ' active' : ''}`}
             style={{
-              backgroundColor: idx < activeSegmentsCount ? '#3b82f6' : '#e5e7eb'
+              backgroundColor: idx < activeSegmentsCount ? '#6366f1' : '#e5e7eb'
             }}
           />
         ))}
@@ -135,7 +135,7 @@ const GoalsWidget = () => {
                   <div>
                     <h4 style={{ fontSize: '13px', fontWeight: 700, margin: 0, color: '#111827' }}>{goal.name}</h4>
                     <span style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
-                      ${goal.current.toLocaleString(undefined, { minimumFractionDigits: 2 })} / ${goal.target.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                      ₹{goal.current.toLocaleString('en-IN', { minimumFractionDigits: 2 })} / ₹{goal.target.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                     </span>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ const GoalsWidget = () => {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '20px' }}>
                 <div className="form-group" style={{ marginBottom: 0 }}>
-                  <label className="form-label">Target Amount ($)</label>
+                  <label className="form-label">Target Amount (₹)</label>
                   <input
                     type="number"
                     placeholder="2000"
@@ -254,7 +254,7 @@ const GoalsWidget = () => {
                   />
                 </div>
                 <div className="form-group" style={{ marginBottom: 0 }}>
-                  <label className="form-label">Current Saved ($)</label>
+                  <label className="form-label">Current Saved (₹)</label>
                   <input
                     type="number"
                     placeholder="500"

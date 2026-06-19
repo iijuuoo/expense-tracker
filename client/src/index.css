@@ -9,9 +9,9 @@
   --panel-bg: #ffffff;
   --panel-border: #f0f2f5;
   
-  --primary: #3b82f6; /* Blue */
-  --primary-hover: #1d4ed8;
-  --primary-glow: rgba(59, 130, 246, 0.15);
+  --primary: #6366f1; /* Indigo */
+  --primary-hover: #4f46e5;
+  --primary-glow: rgba(99, 102, 241, 0.15);
   
   --accent: #c084fc; /* Purple accent */
   --accent-glow: rgba(192, 132, 252, 0.15);
@@ -30,7 +30,7 @@
   
   --input-bg: #f9fafb;
   --input-border: #e5e7eb;
-  --input-focus-border: #3b82f6;
+  --input-focus-border: #6366f1;
   
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -385,7 +385,7 @@ h1, h2, h3, h4 {
 }
 
 .stat-card-gradient.income {
-  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
 }
 
 .stat-card-gradient.expense {

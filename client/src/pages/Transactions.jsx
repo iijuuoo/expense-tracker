@@ -216,7 +216,7 @@ const Transactions = () => {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div className="form-group">
-                  <label className="form-label">Amount ($)</label>
+                  <label className="form-label">Amount (₹)</label>
                   <input
                     type="number"
                     className="form-control"

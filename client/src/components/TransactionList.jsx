@@ -203,7 +203,7 @@ const TransactionList = ({ transactions = [], onEdit, onDelete }) => {
                     fontWeight: 700, 
                     color: t.type === 'income' ? 'var(--success)' : '#111827'
                   }}>
-                    {t.type === 'income' ? '+' : '-'}${t.amount.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                    {t.type === 'income' ? '+' : '-'}₹{t.amount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                   </td>
                   <td>
                     <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>

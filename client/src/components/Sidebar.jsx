@@ -3,10 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { 
   LayoutDashboard, 
-  TrendingUp, 
   Receipt, 
-  CreditCard, 
-  BarChart3, 
   Settings, 
   LogOut 
 } from 'lucide-react';
@@ -22,10 +19,7 @@ const Sidebar = () => {
 
   const navItems = [
     { label: 'Dashboard', path: '/', icon: LayoutDashboard },
-    { label: 'Invest', path: '/invest-mock', icon: TrendingUp },
-    { label: 'Transactions', path: '/transactions', icon: Receipt },
-    { label: 'Cards', path: '/cards-mock', icon: CreditCard },
-    { label: 'Statistics', path: '/statistics-mock', icon: BarChart3 },
+    { label: 'Transactions', path: '/transactions', icon: Receipt }
   ];
 
   return (
@@ -49,7 +43,7 @@ const Sidebar = () => {
           <circle cx="96" cy="30" r="9" fill="#0288d1" />
           <path d="M68,26 C82,26 92,34 95,44 C98,54 96,66 88,78 C98,66 102,52 98,42 C94,32 82,26 68,26 Z" fill="#0288d1" />
         </svg>
-        <span>FINCHECK</span>
+        <span>EXPENSE MANAGER</span>
       </NavLink>
 
       {/* Menu links */}
@@ -62,12 +56,6 @@ const Sidebar = () => {
             <NavLink
               key={item.label}
               to={isMock ? '#' : item.path}
-              onClick={(e) => {
-                if (isMock) {
-                  e.preventDefault();
-                  alert(`${item.label} page is currently a demonstration and links back here.`);
-                }
-              }}
               className={({ isActive }) => 
                 `sidebar-link${isActive && !isMock ? ' active' : ''}`
               }
@@ -81,17 +69,6 @@ const Sidebar = () => {
 
       {/* Footer menu */}
       <div className="sidebar-footer">
-        <NavLink
-          to="#"
-          onClick={(e) => {
-            e.preventDefault();
-            alert('Settings option is a placeholder in this view.');
-          }}
-          className="sidebar-link"
-        >
-          <Settings size={18} />
-          <span>Settings</span>
-        </NavLink>
         <button
           onClick={handleLogout}
           className="sidebar-link"
