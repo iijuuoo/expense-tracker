@@ -83,6 +83,20 @@
       "email": "amal@gmail.com",
       "password": "$2a$10$Od27C3aMNH0Ho32yHSfFJeJ3xyWATE4JYf3J8t5eig9fgC1su2BTq",
       "createdAt": "2026-06-20T07:28:07.444Z"
+    },
+    {
+      "_id": "mqm6shqaahlpzj2jc",
+      "name": "abu",
+      "email": "abu66@gmail.com",
+      "password": "$2a$10$Xxr1nXL6QjawuV5fTc3lxeFr358KavA89731.ng7MGEF8mu3z5Cau",
+      "createdAt": "2026-06-20T10:00:13.762Z"
+    },
+    {
+      "_id": "mqm6yntkx7ifg2d2z",
+      "name": "abu",
+      "email": "raihan@gmail.com",
+      "password": "$2a$10$XuFIyhHJzLgJ1dRFfGO72uTzqdFWUgtuE9pOEVqSSSxkPhEQFR0sO",
+      "createdAt": "2026-06-20T10:05:01.593Z"
     }
   ],
   "transactions": [
@@ -439,6 +453,17 @@
       "date": "2026-06-20T00:00:00.000Z",
       "description": "",
       "createdAt": "2026-06-20T07:24:40.825Z"
+    },
+    {
+      "_id": "mqm6zqbcdc3m5das7",
+      "userId": "mqm6yntkx7ifg2d2z",
+      "title": "salary",
+      "amount": 100000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T10:05:51.480Z"
     }
   ]
 }
