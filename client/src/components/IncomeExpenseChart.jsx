@@ -5,15 +5,8 @@ const IncomeExpenseChart = ({ data = [] }) => {
   const [viewType, setViewType] = useState('income'); // 'income' or 'expense'
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  // If data is empty, use default mock entries for presentation
-  const chartData = data.length > 0 ? data : [
-    { month: 'Mar', income: 2800, expense: 2100 },
-    { month: 'Apr', income: 3400, expense: 2300 },
-    { month: 'May', income: 3200, expense: 2900 },
-    { month: 'Jun', income: 4653, expense: 2103 },
-    { month: 'Jul', income: 4100, expense: 2800 },
-    { month: 'Aug', income: 4900, expense: 3300 }
-  ];
+  // Use actual data only
+  const chartData = data;
 
   // Set the hovered index to the last element by default if not hovered
   const activeIndex = hoveredIndex !== null ? hoveredIndex : chartData.length - 1;

@@ -185,10 +185,53 @@ const Dashboard = () => {
     return list.sort((a, b) => new Date(b.date) - new Date(a.date));
   };
 
-  // Mock calculated savings (45% of income, or standard formula if no transactions)
-  const savingsVal = overview.totalIncome > 0 
-    ? Math.max(overview.totalIncome * 0.45, 0)
-    : 9500.63;
+
+
+  // Calculate dynamic month-over-month percentages
+  const getMonthOverMonthStats = () => {
+    if (!monthlyData || monthlyData.length < 2) {
+      return { incomePct: 0, expensePct: 0, balancePct: 0, savingsPct: 0 };
+    }
+
+    const currentMonth = monthlyData[monthlyData.length - 1];
+    const previousMonth = monthlyData[monthlyData.length - 2];
+
+    const currentBalance = currentMonth.income - currentMonth.expense;
+    const previousBalance = previousMonth.income - previousMonth.expense;
+
+    const calcPct = (curr, prev) => {
+      if (prev === 0) return curr > 0 ? 100 : 0;
+      return Math.round(((curr - prev) / prev) * 100);
+    };
+
+    return {
+      incomePct: calcPct(currentMonth.income, previousMonth.income),
+      expensePct: calcPct(currentMonth.expense, previousMonth.expense),
+      balancePct: calcPct(currentBalance, previousBalance)
+    };
+  };
+
+  const momStats = getMonthOverMonthStats();
+
+  const renderBadge = (pct) => {
+    if (pct === 0) {
+      return (
+        <div className="stat-card-badge">
+          <span>0% —</span>
+          <span style={{ opacity: 0.8 }}>than last month</span>
+        </div>
+      );
+    }
+    const isPositive = pct > 0;
+    const arrow = isPositive ? '↗' : '↘';
+    const sign = isPositive ? '+' : '';
+    return (
+      <div className="stat-card-badge">
+        <span>{sign}{pct}% {arrow}</span>
+        <span style={{ opacity: 0.8 }}>than last month</span>
+      </div>
+    );
+  };
 
   if (loading && transactions.length === 0) {
     return (
@@ -232,10 +275,7 @@ const Dashboard = () => {
             <div className="stat-card-value">
               ₹{overview.balance.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
-            <div className="stat-card-badge">
-              <span>+22% ↗</span>
-              <span style={{ opacity: 0.8 }}>than last month</span>
-            </div>
+            {renderBadge(momStats.balancePct)}
           </div>
         </div>
 
@@ -251,10 +291,7 @@ const Dashboard = () => {
             <div className="stat-card-value">
               ₹{overview.totalIncome.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
-            <div className="stat-card-badge">
-              <span>+36% ↗</span>
-              <span style={{ opacity: 0.8 }}>than last month</span>
-            </div>
+            {renderBadge(momStats.incomePct)}
           </div>
         </div>
 
@@ -270,31 +307,11 @@ const Dashboard = () => {
             <div className="stat-card-value">
               ₹{overview.totalExpense.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </div>
-            <div className="stat-card-badge">
-              <span>-11% ↘</span>
-              <span style={{ opacity: 0.8 }}>than last month</span>
-            </div>
+            {renderBadge(momStats.expensePct)}
           </div>
         </div>
 
-        {/* Total Savings */}
-        <div className="stat-card-gradient savings">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-            <span className="stat-card-label">Total Savings</span>
-            <div style={{ background: 'rgba(255,255,255,0.2)', padding: '6px', borderRadius: '8px' }}>
-              <PiggyBank size={18} />
-            </div>
-          </div>
-          <div>
-            <div className="stat-card-value">
-              ₹{savingsVal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-            </div>
-            <div className="stat-card-badge">
-              <span>+15% ↗</span>
-              <span style={{ opacity: 0.8 }}>than last month</span>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       {/* Main Grid Components */}

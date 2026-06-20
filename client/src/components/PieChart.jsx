@@ -21,16 +21,8 @@ const getCategoryColor = (category, index) => {
 const PieChart = ({ data = [] }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  // If no expense data is registered yet, use mock data matching the screenshot
-  const chartData = data.filter(item => item.amount > 0).length > 0
-    ? data.filter(item => item.amount > 0)
-    : [
-        { category: 'Travel', amount: 673.21, label: 'House/Travel' },
-        { category: 'Food', amount: 525.94, label: 'Food' },
-        { category: 'Entertainment', amount: 357.64, label: 'Investing' },
-        { category: 'Shopping', amount: 336.60, label: 'Online Shop' },
-        { category: 'Bills', amount: 210.38, label: 'Beauty' }
-      ];
+  // Use actual data only
+  const chartData = data.filter(item => item.amount > 0);
 
   const total = chartData.reduce((sum, item) => sum + item.amount, 0);
 

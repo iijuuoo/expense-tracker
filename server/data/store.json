@@ -20,6 +20,69 @@
       "email": "abu2020@gmail.com",
       "password": "$2a$10$ELzuYP/4Ey1O6bQpOF/LDeYh7qTOiS1PYiVP5jNZthG.k84IjB/2G",
       "createdAt": "2026-06-18T08:59:00.963Z"
+    },
+    {
+      "_id": "mqlx8oea4kzoq4kq8",
+      "name": "kamba",
+      "email": "kamba66@gmail.com",
+      "password": "$2a$10$8PBLybEaOncvj6wSUX826uoO27ZLhymCtvqr06Mr27S2McYV6Qcxq",
+      "createdAt": "2026-06-20T05:32:52.738Z"
+    },
+    {
+      "_id": "mqlxwl6w9ca1d9def",
+      "name": "aaa",
+      "email": "adhil66@gmail.com",
+      "password": "$2a$10$0vltkCk0SUtpLBb25mjlBu3vQhtHooC2L3Q5hjwOdCmkXWo4tsSCu",
+      "createdAt": "2026-06-20T05:51:28.328Z"
+    },
+    {
+      "_id": "mqly6wkmp4vg65ws6",
+      "name": "iijuu",
+      "email": "iijuu66@gmail.com",
+      "password": "$2a$10$I8PCDqVjOnaD0xd6Y4tryuFAfY4rEyna1OIsjc5PBS4cFrONnGG42",
+      "createdAt": "2026-06-20T05:59:29.638Z"
+    },
+    {
+      "_id": "mqlysb2z1x0da3ric",
+      "name": "fvs",
+      "email": "fvs66@gmail.com",
+      "password": "$2a$10$RiM7HpZQ704MxRgfpdJeZeE4IKp8rsYRDH/OF/UOQp7UySwkgolky",
+      "createdAt": "2026-06-20T06:16:08.219Z"
+    },
+    {
+      "_id": "mqlz1ujkab9fahy72",
+      "name": "arathy",
+      "email": "arathyrajeesh2@gmail.com",
+      "password": "$2a$10$k11F9tzyGvwAn8r7Zhp6EuKmeFe2m5TzA35Xd40h7hkfQr/K8D2cS",
+      "createdAt": "2026-06-20T06:23:33.345Z"
+    },
+    {
+      "_id": "mqlzkv7iu1fom6p33",
+      "name": "test3",
+      "email": "test3@gmail.com",
+      "password": "$2a$10$7z2N7tlLpowY2IISFqLzNO6zuXZOQRhEpRFvkfPzYdhEiuB..0j46",
+      "createdAt": "2026-06-20T06:38:20.670Z"
+    },
+    {
+      "_id": "mqm0hfwcmg0kypam5",
+      "name": "savad",
+      "email": "savad66@gmail.com",
+      "password": "$2a$10$jIlF5pwLoMSqS4RuR69WjOJhBLTdLAcqFDIyZgaV1JIEDw0Hs4i5G",
+      "createdAt": "2026-06-20T07:03:40.476Z"
+    },
+    {
+      "_id": "mqm172cmtw7gq58lg",
+      "name": "avani",
+      "email": "avani@gmail.com",
+      "password": "$2a$10$KD3s3ILnnvm5UX3QTyyKLOFO9a3nYJfTUBaR/FoHltyQNpdnKmItG",
+      "createdAt": "2026-06-20T07:23:35.974Z"
+    },
+    {
+      "_id": "mqm1cvtgz0ubezscp",
+      "name": "amal",
+      "email": "amal@gmail.com",
+      "password": "$2a$10$Od27C3aMNH0Ho32yHSfFJeJ3xyWATE4JYf3J8t5eig9fgC1su2BTq",
+      "createdAt": "2026-06-20T07:28:07.444Z"
     }
   ],
   "transactions": [
@@ -166,6 +229,216 @@
       "date": "2026-05-19T00:00:00.000Z",
       "description": "",
       "createdAt": "2026-06-19T10:20:55.460Z"
+    },
+    {
+      "_id": "mqlxxvvm2ekxdigma",
+      "userId": "mqlxwl6w9ca1d9def",
+      "title": "salary",
+      "amount": 1000000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T05:52:28.835Z"
+    },
+    {
+      "_id": "mqly09697z0h5utrn",
+      "userId": "mqlxwl6w9ca1d9def",
+      "title": "shopping",
+      "amount": 500000,
+      "type": "expense",
+      "category": "Shopping",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T05:54:19.377Z"
+    },
+    {
+      "_id": "mqly1wwg25v1rjy68",
+      "userId": "mqlxwl6w9ca1d9def",
+      "title": "coffee",
+      "amount": 300000,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T05:55:36.784Z"
+    },
+    {
+      "_id": "mqly4frzgfctnp08f",
+      "userId": "mqlxwl6w9ca1d9def",
+      "title": "travel",
+      "amount": 200000,
+      "type": "expense",
+      "category": "Travel",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T05:57:34.559Z"
+    },
+    {
+      "_id": "mqly902mlh942086x",
+      "userId": "mqly6wkmp4vg65ws6",
+      "title": "asdfgh",
+      "amount": 1234567,
+      "type": "expense",
+      "category": "Bills",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:01:07.486Z"
+    },
+    {
+      "_id": "mqly9uh6s2zoyehbx",
+      "userId": "mqly6wkmp4vg65ws6",
+      "title": "a",
+      "amount": 100000000000000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:01:46.890Z"
+    },
+    {
+      "_id": "mqlyuxaer14bkjh8a",
+      "userId": "mqlysb2z1x0da3ric",
+      "title": "salary",
+      "amount": 100,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:18:10.310Z"
+    },
+    {
+      "_id": "mqlyw43himmcl53zu",
+      "userId": "mqlysb2z1x0da3ric",
+      "title": "sa",
+      "amount": 900,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:19:05.789Z"
+    },
+    {
+      "_id": "mqlyx00tbd0xfjw95",
+      "userId": "mqlysb2z1x0da3ric",
+      "title": "dyt",
+      "amount": 500,
+      "type": "expense",
+      "category": "Shopping",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:19:47.165Z"
+    },
+    {
+      "_id": "mqlyxneif5gqxco1s",
+      "userId": "mqlysb2z1x0da3ric",
+      "title": "hf",
+      "amount": 100,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:20:17.467Z"
+    },
+    {
+      "_id": "mqlz27vrzgc9zxy5o",
+      "userId": "mqlz1ujkab9fahy72",
+      "title": "coffee",
+      "amount": 10,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:23:50.631Z"
+    },
+    {
+      "_id": "mqlz2vk5ocz1ep4o7",
+      "userId": "mqlz1ujkab9fahy72",
+      "title": "july month",
+      "amount": 10000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:24:21.317Z"
+    },
+    {
+      "_id": "mqlz9lqikw4vtkds5",
+      "userId": "mqlz1ujkab9fahy72",
+      "title": "lunch",
+      "amount": 1000,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:29:35.178Z"
+    },
+    {
+      "_id": "mqlzac3z2io436sym",
+      "userId": "mqlz1ujkab9fahy72",
+      "title": "salary",
+      "amount": 1000,
+      "type": "expense",
+      "category": "Salary",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:30:09.359Z"
+    },
+    {
+      "_id": "mqlzawwakdy6qt4mu",
+      "userId": "mqlz1ujkab9fahy72",
+      "title": "asdfgh",
+      "amount": 1900000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-05-27T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:30:36.298Z",
+      "updatedAt": "2026-06-20T06:31:34.656Z"
+    },
+    {
+      "_id": "mqlzbglrxkgjatj19",
+      "userId": "mqlz1ujkab9fahy72",
+      "title": "aaaaaaaaaaaaa",
+      "amount": 1000,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-05-21T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T06:31:01.839Z"
+    },
+    {
+      "_id": "mqm0i12cxup86vroy",
+      "userId": "mqm0hfwcmg0kypam5",
+      "title": "salary",
+      "amount": 50000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T07:04:07.908Z"
+    },
+    {
+      "_id": "mqm0im8s0vdnr0e2h",
+      "userId": "mqm0hfwcmg0kypam5",
+      "title": "shopping",
+      "amount": 5000,
+      "type": "expense",
+      "category": "Shopping",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T07:04:35.356Z"
+    },
+    {
+      "_id": "mqm18ge154ixbbkpk",
+      "userId": "mqm172cmtw7gq58lg",
+      "title": "qqqqqqq",
+      "amount": 11,
+      "type": "expense",
+      "category": "Food",
+      "date": "2026-06-20T00:00:00.000Z",
+      "description": "",
+      "createdAt": "2026-06-20T07:24:40.825Z"
     }
   ]
 }

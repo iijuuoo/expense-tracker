@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, Plane, Car, Target, X } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const DEFAULT_GOALS = [
   { id: '1', name: 'Travel', target: 2000, current: 1000, category: 'travel' },
@@ -7,6 +8,9 @@ const DEFAULT_GOALS = [
 ];
 
 const GoalsWidget = () => {
+  const { user } = useAuth();
+  const storageKey = user ? `fincheck_goals_${user._id}` : 'fincheck_goals';
+
   const [goals, setGoals] = useState([]);
   const [showAddForm, setShowAddForm] = useState(false);
   
@@ -18,7 +22,7 @@ const GoalsWidget = () => {
 
   // Load goals from local storage
   useEffect(() => {
-    const storedGoals = localStorage.getItem('fincheck_goals');
+    const storedGoals = localStorage.getItem(storageKey);
     if (storedGoals) {
       try {
         setGoals(JSON.parse(storedGoals));
@@ -27,13 +31,13 @@ const GoalsWidget = () => {
       }
     } else {
       setGoals(DEFAULT_GOALS);
-      localStorage.setItem('fincheck_goals', JSON.stringify(DEFAULT_GOALS));
+      localStorage.setItem(storageKey, JSON.stringify(DEFAULT_GOALS));
     }
-  }, []);
+  }, [storageKey]);
 
   const saveGoals = (newGoals) => {
     setGoals(newGoals);
-    localStorage.setItem('fincheck_goals', JSON.stringify(newGoals));
+    localStorage.setItem(storageKey, JSON.stringify(newGoals));
   };
 
   const handleAddGoal = (e) => {
